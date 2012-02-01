@@ -1,0 +1,154 @@
+# nice manpage here
+# http://linux.die.net/man/5/muttrc
+# set useragent to somethign awesome like eck
+# first turn off user_agent
+set user_agent=no
+my_hdr User-Agent:Mutt/1.5.19 (Fedora)
+my_hdr From: jomara@redhat.com (Jordan OMara)
+my_hdr Bcc: jomara@redhat.com
+set signature = "~/.sig"
+
+set sidebar_width       = 23
+set sidebar_visible     = yes
+color sidebar_new yellow default
+# dont mark messages old
+set mark_old = no
+
+# these bind keys for the folder pane
+# ctrl-n, ctrl-p to select next, prev folder 
+# ctrl-o to open selected folder 
+bind index \CP sidebar-prev 
+bind index \CN sidebar-next 
+bind index \CO sidebar-open 
+bind pager \CP sidebar-prev 
+bind pager \CN sidebar-next 
+bind pager \CO sidebar-open 
+# ass beef jerky damn hot mama jump to next-unread, bind a key here
+bind index \t next-unread
+bind pager   \t          next-unread
+bind index  ,\t      previous-unread
+bind pager  ,\t      previous-unread
+
+# sort by thread
+set sort = threads
+
+# b toggles sidebar visibility 
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>' 
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>' 
+
+set record=~/Maildir/Sent
+#### useful settings from docs
+# activate TLS if available on the server
+set ssl_starttls=yes
+# always use SSL when connecting to a server
+set ssl_force_tls=yes
+# Don't wait to enter mailbox manually 
+unset imap_passive        
+set imap_check_subscribed
+
+# Reduce polling frequency to a sane level
+##set mail_check=60
+set mail_check=300
+set timeout=10
+# keep a cache of headers for faster loading (1.5.9+?)
+set header_cache=~/Maildir/hcache
+# Display download progress every 5K
+set net_inc=5
+# force envelope and sender
+set use_from
+set envelope_from
+set hostname="redhat.com"
+set realname="Jordan OMara"
+set from="jomara@redhat.com"
+set spoolfile=~/Maildir/INBOX
+# NEEDED for maildir format
+set mbox_type=Maildir
+set folder=~/Maildir/
+mailboxes =INBOX \
+=Sent \
+=bugzilla\
+=candlepin-patches\
+=Drafts\
+=Fedora\
+=fedora-music\
+=friday-list\
+=memolist\
+=Queue\
+=Sent\
+=USAList  \
+
+### BEGIN NOTMUCH-MUTT SETTINGS
+
+    macro index <F8> \
+          "<enter-command>unset wait_key<enter><shell-escape>~/bin/mutt-notmuch.pl --prompt search<enter><change-folder-readonly>~/.cache/mutt_results<enter>" \
+          "search mail (using notmuch)"
+    macro index <F9> \
+          "<enter-command>unset wait_key<enter><pipe-message>~/bin/mutt-notmuch.pl thread<enter><change-folder-readonly>~/.cache/mutt_results<enter><enter-command>set wait_key<enter>" \
+          "search and reconstruct owning thread (using notmuch)"
+
+
+set move=no
+set certificate_file=/home/jomara/.mutt.crt
+
+ignore *
+unignore From To Cc Subject Date Reply-To Organization X-Mailer User-Agent
+
+# Order to display the headers in
+hdr_order From: Date: To: Cc: Subject:
+
+set edit_headers
+
+# Use vim as the editor - this line will wrap
+# Set wordwrap on in vim to automatically wrap lines -
+# no :gq all the time
+set editor="vim +':set textwidth=70' +':set background=dark' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
+
+# set format=flowed
+set text_flowed
+
+# dont mark messages old
+set nomark_old
+
+
+# Automatically quote message
+set include=yes
+
+# Set quotemark to 1 byte
+set indent_str="> "
+
+set index_format   = "%4C %Z %{%b %d} %-15.15F (%4l) %s"
+set forward_format="Fw: %s"     # subject in forwarded messages
+set date_format="%d/%m/%y %H:%M %Z"
+set quote_regexp="^([A-Za-z ]+>|[]%>:|}-][]>:|}-]*)"
+
+# set my stupid smtp server dammit
+set smtp_url="smtp://smtp.corp.redhat.com"
+
+# dammit mutt, forward mime attachments by default and yes im aware SMTP is not an FTP client - shutup
+set mime_forward=yes
+set mime_forward_rest=yes
+color quoted0   blue        default
+color quoted1   green       default
+color quoted2   red         default
+color quoted3   blue        default
+color quoted4   green       default
+color quoted5   red         default
+color quoted6   blue        default
+color signature green       default
+color tilde     cyan  default
+
+### latest edit
+color header white         default .               # Headers are this color,
+color header red    white ^Subject        # except for `Subject:'.
+color header black          red     ^(X-Spam-Status:\ Yes|X-Virus-Report:)
+color header black          red     ^Newsgroups:.*, # cross-posted
+color header black          green   ^Followup-To:   # followup header
+## changing color status to default, was brightblue black
+color status    brightblue default
+# indicator is the marker thing that moves to highlight messages and shit
+#color innext unread messagedicator green default
+color indicator cyan     default
+#color markers green red
+color markers   cyan  black
+macro index I c=INBOX<Return>
+source ~/.muttrc-gpg
