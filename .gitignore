@@ -27,6 +27,7 @@
 .histfile
 .icedtea/
 .imsettings.log
+.irssi/
 .katello/
 .local/
 .libreoffice/
@@ -37,6 +38,7 @@
 .mutt.crt
 .offlineimap/
 .offlineimaprc
+.oh-my-zsh/
 .pgadmin3
 .pgpass
 .pki/
@@ -46,6 +48,7 @@
 .purple/
 .ssh/
 .subversion_IDEA/
+.task/
 .thumbnails/
 .vimfuzzyfinder
 .viminfo
