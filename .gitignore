@@ -57,6 +57,12 @@
 .xsession-errors
 .zcompdump
 .zsh_history
+.SpiderOak/
+.adobe/
+.lesshst
+.setroubleshoot
+notes-scratch
+rpmbuild/
 Contacts/
 Documents/
 Downloads/

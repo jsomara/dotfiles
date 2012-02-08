@@ -1,2 +1,2 @@
-Jordan O'Mara
-Centennial Office
+Jordan O'Mara <jomara at redhat.com>
+Red Hat Engineering, Raleigh 
