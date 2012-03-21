@@ -76,6 +76,7 @@ map <leader>tm :tabmove
 
 " Automatic fold settings for specific files. Uncomment to use.
 autocmd FileType ruby setlocal background=dark shiftwidth=2 tabstop=2 expandtab
+autocmd FileType javascript setlocal background=dark shiftwidth=2 tabstop=2 expandtab
 autocmd FileType css  setlocal background=dark shiftwidth=2 tabstop=2 expandtab
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
