@@ -34,6 +34,7 @@ plugins=(git ruby taskwarrior)
 source $ZSH/oh-my-zsh.sh
 
 setopt nocorrectall
+setopt nonomatch
 
 # Customize to your needs...
 export PATH=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/bin:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/bin:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/bin:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/jomara/.local/bin:/home/jomara/bin
