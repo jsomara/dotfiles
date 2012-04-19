@@ -1,10 +1,3 @@
-#
-# Example of a user's .screenrc file
-#
-
-# This is how one can set a reattach password:
-# password ODSJQf.4IJN7E    # "1234"
-
 # no annoying audible bell, please
 vbell on
 
@@ -52,13 +45,6 @@ bind 'K' kill
 bind 'I' login on
 bind 'O' login off
 bind '}' history
-
-# Yet another hack:
-# Prepend/append register [/] to the paste if ^a^] is pressed.
-# This lets me have autoindent mode in vi.
-register [ "\033:se noai\015a"
-register ] "\033:se ai\015a"
-bind ^] paste [.]
 
 ################
 #

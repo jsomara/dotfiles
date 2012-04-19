@@ -140,8 +140,7 @@ bind ^] paste [.]
 # hardstatus alwayslastline "%w"
 
 # Create a hardstatus line similar to what C-A w displays.
-hardstatus alwayslastline "%{.bW}%-Lw%{.rW}%n %t%{-}%+Lw %=%{..G} %H %{..Y} %m/%d %c "
-
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]' 
 
 # bind = resize =
 # bind + resize +1
@@ -150,4 +149,3 @@ hardstatus alwayslastline "%{.bW}%-Lw%{.rW}%n %t%{-}%+Lw %=%{..G} %H %{..Y} %m/%
 #
 # attrcolor u "-u b"
 # attrcolor b "R"
-
