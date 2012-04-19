@@ -66,6 +66,7 @@
 .xsession-errors
 .zcompdump
 .zsh_history
+.zsh-update
 .SpiderOak/
 .adobe/
 .grl-*
