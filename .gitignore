@@ -7,6 +7,7 @@
 .bugzillacookies
 .bundler/
 .cache/
+.config/
 .dbus/
 .dir_colors
 .dropbox-dist/
@@ -73,7 +74,6 @@
 .lesshst
 .netrc
 .setroubleshoot
-.zsh-update
 notes-scratch
 rpmbuild/
 Contacts/
@@ -83,7 +83,6 @@ Dropbox/
 Maildir/
 Pictures/
 Sent/
-bin/
 dev/
 hcache
 images/
