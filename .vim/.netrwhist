@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/jomara/dev/katello/puppet/modules/common'
-let g:netrw_dirhist_2='/home/jomara/dev/katello/puppet/modules/common/manifests'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/jomara/dev/system-engine/selinux/katello-selinux'
+let g:netrw_dirhist_2='/home/jomara/.koji'
+let g:netrw_dirhist_3='/home/jomara/dev/ldap_fluff/lib/ldap_fluff'

@@ -1,6 +1,8 @@
 # no annoying audible bell, please
 vbell on
 
+term xterm-256color
+
 # detach on hangup
 autodetach on
 

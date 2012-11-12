@@ -40,6 +40,8 @@ defscrollback 1000
 # xterm tweaks
 #
 
+term xterm-256color
+
 # Allows the xterm scrollbar to work with screen
 termcapinfo xterm ti@:te@
 

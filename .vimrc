@@ -2,8 +2,16 @@
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
 set nocompatible                  " Must come first because it changes other options.
-
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 "silent! call pathogen#runtime_append_all_bundles()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'benmills/vimux'
+Bundle 'kien/ctrlp.vim'
+
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
@@ -73,10 +81,10 @@ map <leader>tm :tabmove
 
 " Automatic fold settings for specific files. Uncomment to use.
 autocmd FileType ruby setlocal background=dark shiftwidth=2 tabstop=2 expandtab
-autocmd FileType ruby,javascript,css autocmd BufWritePre <buffer> :%s/\s\+$//e 
+autocmd FileType ruby,javascript,css,haml,less autocmd BufWritePre <buffer> :%s/\s\+$//e 
 autocmd FileType javascript setlocal background=dark shiftwidth=2 tabstop=2 expandtab
 autocmd FileType css  setlocal background=dark shiftwidth=2 tabstop=2 expandtab
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
+let g:Powerline_symbols='fancy'
