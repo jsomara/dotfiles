@@ -4,7 +4,6 @@
 set nocompatible                  " Must come first because it changes other options.
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-"silent! call pathogen#runtime_append_all_bundles()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
@@ -49,14 +48,10 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 set background=dark
-" UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
-
 set laststatus=2                  " Show the status line all the time
-" Useful status information at bottom of screen
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ winterfell {exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -69,16 +64,6 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
-
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
 " Automatic fold settings for specific files. Uncomment to use.
 autocmd FileType ruby setlocal background=dark shiftwidth=2 tabstop=2 expandtab
 autocmd FileType ruby,javascript,css,haml,less autocmd BufWritePre <buffer> :%s/\s\+$//e 
@@ -88,3 +73,12 @@ autocmd FileType css  setlocal background=dark shiftwidth=2 tabstop=2 expandtab
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 let g:Powerline_symbols='fancy'
+
+" Run last tmux command with \r
+:map <leader>r :wa\|:RunLastVimTmuxCommand<cr>
+
+" ctrl p open in new tab intsead of buffer
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
