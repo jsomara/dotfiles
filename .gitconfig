@@ -2,6 +2,9 @@
 	name = Jordan OMara
 	email = jomara@redhat.com
 
+[core]
+  editor = vim
+
 [color]
 	diff = auto
 	status = auto
