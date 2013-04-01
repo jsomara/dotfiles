@@ -38,7 +38,7 @@ set pgp_replysign=yes
 set pgp_replysignencrypted=yes
 set pgp_timeout=600
 #set pgp_timeout=180
-set pgp_sign_as=56833E4A
+set pgp_sign_as=DCB2CF6B
 # decode application/pgp
 set pgp_decode_command="/usr/bin/gpg  --charset utf-8   %?p?--passphrase-fd 0? --no-verbose --quiet  --batch  --output - %f"
 

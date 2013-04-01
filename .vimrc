@@ -7,7 +7,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'aert/vim-powerline'
 Bundle 'benmills/vimux'
 Bundle 'kien/ctrlp.vim'
 

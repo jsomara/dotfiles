@@ -28,6 +28,23 @@
 	export TMUX_POWERLINE_SEG_DATE_FORMAT="%F"
 # }
 
+# earthquake.sh {
+	# The data provider to use. Currently only "goo" is supported.
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_DATA_PROVIDER="goo"
+	# How often to update the earthquake data in seconds.
+	# Note: This is not an early warning detector, use this
+	# to be informed about recent earthquake magnitudes in your
+	# area. If this is too often, goo may decide to ban you form
+	# their server
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_UPDATE_PERIOD="600"
+	# Only display information when earthquakes are within this many minutes
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_ALERT_TIME_WINDOW="60"
+	# Display time with this format
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_TIME_FORMAT='(%H:%M)'
+	# Display only if magnitude is greater or equal to this number
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_MIN_MAGNITUDE="3"
+# }
+
 # hostname.sh {
 	# Use short or long format for the hostname. Can be "short, long"
 	export TMUX_POWERLINE_SEG_HOSTNAME_FORMAT="short"
@@ -96,7 +113,7 @@
 	# The data provider to use. Currently only "yahoo" is supported.
 	export TMUX_POWERLINE_SEG_WEATHER_DATA_PROVIDER="yahoo"
 	# What unit to use. Can be any of {c,f,k}.
-	export TMUX_POWERLINE_SEG_WEATHER_UNIT="f"
+	export TMUX_POWERLINE_SEG_WEATHER_UNIT="c"
 	# How often to update the weather in seconds.
 	export TMUX_POWERLINE_SEG_WEATHER_UPDATE_PERIOD="600"
 	
@@ -104,5 +121,5 @@
 	# 1. Go to Yahoo weather http://weather.yahoo.com/
 	# 2. Find the weather for you location
 	# 3. Copy the last numbers in that URL. e.g. "http://weather.yahoo.com/united-states/california/newport-beach-12796587/" has the numbers "12796587"
-	export TMUX_POWERLINE_SEG_WEATHER_LOCATION="2478307"
+	export TMUX_POWERLINE_SEG_WEATHER_LOCATION=""
 # }
