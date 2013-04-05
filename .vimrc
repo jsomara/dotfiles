@@ -2,6 +2,7 @@
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
 set nocompatible                  " Must come first because it changes other options.
+set shell=/bin/zsh
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -10,7 +11,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'aert/vim-powerline'
 Bundle 'benmills/vimux'
 Bundle 'kien/ctrlp.vim'
-
+Bundle 'jgdavey/vim-turbux'
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
