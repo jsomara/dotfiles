@@ -38,7 +38,7 @@ source $HOME/.rvm/scripts/rvm
 setopt nocorrectall
 setopt nonomatch
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 PATH=$PATH:"/usr/local/heroku/bin" # add heroku toolbelt
 
 # Customize to your needs...
