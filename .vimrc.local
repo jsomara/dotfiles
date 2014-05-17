@@ -1,0 +1,23 @@
+colorscheme molokai
+
+" ctrl p open in new tab intsead of buffer
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
+let NERDTreeChDirMode=0
+let g:ctrlp_working_path_mode = 'r'
+
+    " Automatic fold settings for specific files. Uncomment to use.
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType ruby,javascript,css,haml,less autocmd BufWritePre <buffer> :%s/\s\+$//e 
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
+
+" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
+autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+let g:Powerline_symbols='fancy'
+
+" Run last tmux command with \r
+:map <leader>r :wa\|:RunLastVimTmuxCommand<cr>
